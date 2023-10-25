@@ -1,0 +1,22 @@
+/*
+Color pallete: Halloween
+#E26B0F (orange)
+#F1A73A (yellow)
+#59351C (brown)
+#9451BB (violet)
+#853174 (purple)
+*/
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
