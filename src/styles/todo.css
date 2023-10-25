@@ -9,6 +9,15 @@
     margin: 0 15px;
 }
 
-.delete {
+.dim-completed {
+    opacity: 0.4;
+}
+
+.delete-btn {
     background-color: #FB702D;
+}
+
+/* container para que los elementos de la "tarea" no se muevan al mostrarse u ocultarse la checkmark */
+.checkmark-size {
+    width: 36px;
 }
