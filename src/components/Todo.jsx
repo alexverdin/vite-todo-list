@@ -5,11 +5,11 @@ import CheckMark from './CheckMark';
 
 // componente 'React' de Clase
 class Todo extends Component {
+    /*
     state={
         done: false,
-        check: false
     }
-    /*
+    
     todoElement = () => {
         return(
             <>
@@ -29,14 +29,11 @@ class Todo extends Component {
 
     render(){
         return(
-            <div className={`todo-container ${this.state.done ? 'dim-completed' : ''}`}>
-                <div className='checkmark-size'>
-                    {this.state.check ? <CheckMark /> : null}
-                </div>
-                <p className='list-item'>Tarea por hacer</p>
-                <button onClick={
-                    ()=> {this.setState({done: true, check: true})}
-                    } className='delete-btn'>Terminado</button>
+            <div className={`todo-container ${this.props.done ? 'dim-completed' : ''}`}>
+
+                <CheckMark done={this.props.done} />
+                <p className='list-item'>{this.props.title}</p>
+                <button className='delete-btn'>Listo</button>
             </div>
         )
     }
@@ -44,7 +41,8 @@ class Todo extends Component {
 
 // Define el tipo de valor a recibir por cada prop definida dentro de Class.propTypes
 Todo.propTypes = {
-    done: PropTypes.bool
+    done: PropTypes.bool,
+    title: PropTypes.string.isRequired
 }
 
 export default Todo;

@@ -1,18 +1,19 @@
 import '../styles/checkmark.css';
 import PropTypes from 'prop-types';
-import check from '../assets/checkmark.svg';
+import imageSrc from '../assets/checkmark.svg';
 
-const CheckMark = () => {
-    return(
+const CheckMark = ({done}) => {
+    return( done ? 
         <div>
-            <img className='img-size' src={check} alt='checkmark' />
+            <img className='checkmark-size' src={imageSrc} alt='checkmark' />
         </div>
-        
+        : <div className='checkmark-size'/>
     )
 }
 
 CheckMark.propTypes = {
-    imageSrc: PropTypes.text
+    imageSrc: PropTypes.text,
+    done: PropTypes.bool
 }
 
 export default CheckMark;
