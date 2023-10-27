@@ -1,6 +1,6 @@
 import '../styles/checkmark.css';
 import PropTypes from 'prop-types';
-import check from '../assets/checkmark.svg'
+import check from '../assets/checkmark.svg';
 
 const CheckMark = () => {
     return(
