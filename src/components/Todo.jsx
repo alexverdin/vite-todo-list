@@ -32,8 +32,13 @@ class Todo extends Component {
             <div className={`todo-container ${this.props.done ? 'dim-completed' : ''}`}>
 
                 <CheckMark done={this.props.done} />
-                <p className='list-item'>{this.props.title}</p>
-                <button className='delete-btn'>Listo</button>
+                <p onClick={e => this.props.togglefn(e)} className='list-item'>{this.props.title}</p>
+                <button
+                    className='delete-btn'
+                    onClick={e => this.props.deletefn(e)}
+                >
+                    Borrar
+                </button>
             </div>
         )
     }
@@ -41,8 +46,10 @@ class Todo extends Component {
 
 // Define el tipo de valor a recibir por cada prop definida dentro de Class.propTypes
 Todo.propTypes = {
-    done: PropTypes.bool,
-    title: PropTypes.string.isRequired
+    done: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired,
+    togglefn: PropTypes.func.isRequired,
+    deletefn: PropTypes.func.isRequired
 }
 
 export default Todo;

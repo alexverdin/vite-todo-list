@@ -2,7 +2,7 @@ import '../styles/todolist.css';
 import PropTypes from 'prop-types';
 import Todo from './Todo'; // tarea individual
 
-const TodoList = ({tasks}) => {
+const TodoList = ({tasks, togglefn, deletefn}) => {
   return (
     <div style={{padding: '5px 0'}}>
         <h1 className='todolist-header'>Este es un componente TodoList.</h1>
@@ -13,6 +13,8 @@ const TodoList = ({tasks}) => {
               key={index}
               done={elem.done}
               title={elem.title}
+              deletefn={(e) => deletefn(e, index)}
+              togglefn={(e) => togglefn(e, index)}
             />
           )
         }
@@ -21,7 +23,9 @@ const TodoList = ({tasks}) => {
 };
 
 TodoList.propTypes = {
-  tasks: PropTypes.array
+  tasks: PropTypes.array,
+  togglefn: PropTypes.func.isRequired,
+  deletefn: PropTypes.func.isRequired
 }
 
 TodoList.defaultProps = {
